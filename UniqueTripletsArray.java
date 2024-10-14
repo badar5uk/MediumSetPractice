@@ -27,7 +27,6 @@ public class UniqueTripletsArray {
                     if (j != k) {
                         if (0 == (numbers.get(i) + numbers.get(j) + numbers.get(k))) {
                             List<Integer> secondList = new ArrayList<>(Arrays.asList(numbers.get(i), numbers.get(j), numbers.get(k)));
-                            Collections.sort(secondList);
                             setOfSets.add(secondList);
                         }
                     }
