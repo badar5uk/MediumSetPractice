@@ -21,8 +21,8 @@ public class PairsGivenSum {
         List<Integer> numbers = List.of(1, 5, 7, -1, 5);
         Set<List<Integer>> setOfSets = new HashSet<>();
 
-        for (Integer i = 0; i < numbers.size() - 2; i++) {
-            for (Integer j = i + 1; j < numbers.size() - 1; j++) {
+        for (Integer i = 0; i < numbers.size() - 1; i++) {
+            for (Integer j = i + 1; j < numbers.size(); j++) {
                 if (i != j) {
                     if (target == (numbers.get(i) + numbers.get(j))) {
                         ArrayList<Integer> secondList = new ArrayList<>(Arrays.asList(numbers.get(i), numbers.get(j)));
