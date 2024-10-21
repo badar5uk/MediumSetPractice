@@ -7,27 +7,27 @@ Output: the number of non overlapping intervals
 Process : -
 
  */
-    static List<List<Integer>> listOfList = Arrays.asList(
-            Arrays.asList(1, 2),
-            Arrays.asList(2, 3),
-            Arrays.asList(3, 4),
-            Arrays.asList(1, 3)
-    );
-    static Set<List<Integer>> setOfList = new HashSet<>();
+    static  Integer[][] intervals = { {1, 2}, {2, 3}, {3, 4}, {1, 3} };
+    static Set<Integer> setOfList = new HashSet<Integer>();
 
     public static void main(String[] args) {
 
-        Integer prevEnd = listOfList.get(0).get(1);
+        Arrays.sort(intervals,(a,b)->a[1]-b[1]);
+        Integer prevEnd = intervals[0][1];
+        Integer counter =1;
 
-        for (Integer i = 0; i < listOfList.size(); i++) {
-            if (prevEnd > listOfList.get(i).get(1)) {
+        for (int i = 1; i < intervals.length; i++) {
 
-            } else {
-                prevEnd = listOfList.get(i).get(1);
-                setOfList.add(listOfList.get(i));
+            int start = intervals[i][0];
+            int end = intervals[i][1];
+
+            if (start>=prevEnd && !setOfList.contains(end)) {
+                prevEnd = end;
+                setOfList.add(end);
+                counter++;
 
             }
         }
-        System.out.println("The non-overlapping Intervals are: " + setOfList);
+        System.out.println("The non-overlapping Intervals are: " + counter);
     }
 }
