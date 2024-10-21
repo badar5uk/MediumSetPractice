@@ -13,21 +13,21 @@ Process : -
             Arrays.asList(3, 4),
             Arrays.asList(1, 3)
     );
-    static Set<Integer> setOfList = new HashSet<>();
+    static Set<List<Integer>> setOfList = new HashSet<>();
 
     public static void main(String[] args) {
 
-        Integer prev_end = listOfList.get(0).get(1);
-        Integer res = 0;
+        Integer prevEnd = listOfList.get(0).get(1);
 
         for (Integer i = 1; i < listOfList.size(); i++) {
-            if (prev_end > listOfList.get(i).get(0)) {
-                res++;
+            if (prevEnd > listOfList.get(i).get(0)) {
+
             } else {
-                prev_end = listOfList.get(i).get(1);
+                prevEnd = listOfList.get(i).get(1);
+                setOfList.add(listOfList.get(i));
 
             }
         }
-        System.out.println("The number of non-overlapping Intervals is: " + res);
+        System.out.println("The non-overlapping Intervals are: " + setOfList);
     }
 }
