@@ -19,8 +19,8 @@ Process : -
 
         Integer prevEnd = listOfList.get(0).get(1);
 
-        for (Integer i = 1; i < listOfList.size(); i++) {
-            if (prevEnd > listOfList.get(i).get(0)) {
+        for (Integer i = 0; i < listOfList.size(); i++) {
+            if (prevEnd > listOfList.get(i).get(1)) {
 
             } else {
                 prevEnd = listOfList.get(i).get(1);
