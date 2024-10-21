@@ -23,26 +23,26 @@ Explanation: The windows and their distinct element counts are:
      */
     static List<Integer> listNumbers = new ArrayList<>(Arrays.asList(1, 2, 1, 3, 4, 2, 3));
     static Integer window = 4;
-    static Set<Integer> uniqueSet = new HashSet<>();
+
 
     public static void main(String[] args) {
-        loop();
+        countDistinctInWindows();
 
     }
 
-    public static void loop() {
-
+    public static void countDistinctInWindows() {
+        Set<Integer> uniqueSet = new HashSet<>();
         List<Integer> windowList = new ArrayList<>();
-        List<Integer> storingList = new ArrayList<>();
+        List<Integer> distinctCounts = new ArrayList<>();
 
         for (Integer i = 0; i <= listNumbers.size() - window; i++) {
             windowList = listNumbers.subList(i, i + window);
             uniqueSet= new HashSet<>(windowList);
-            storingList.add(uniqueSet.size());
+            distinctCounts.add(uniqueSet.size());
 
         }
         System.out.println("Original list: "+listNumbers);
-        System.out.println("number of unique elements in window "+window+" is: " +storingList);
+        System.out.println("number of unique elements in window "+window+" is: " +distinctCounts);
     }
 
 }
